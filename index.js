@@ -1,6 +1,16 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
-}
+    const seenNumbers = new Set();
+    for (const number of array) {
+      const difference = target - number;
+  
+      if (seenNumbers.has(difference)) return true;
+  
+      seenNumbers.add(number);
+    }
+    return false;
+  }
+
 
 /* 
   Write the Big O time complexity of your function here
@@ -8,6 +18,8 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
+  the sum of any numbers in the array should meet a particular target to be true 
+  else return false
 */
 
 /*
